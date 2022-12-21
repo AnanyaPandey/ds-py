@@ -1,0 +1,25 @@
+
+
+Arrays - Memory 
+--------------------
+
+1D 2D 3D
+
+1D - 9 elements
+9 continuous cells are allocated. 
+( CONTINuOUS )  no gap between memory cells for arrays.
+this is useful in locality of reference.
+
+2D ARRAY 
+
+rows - 0,1,2
+columns - 0,1,2
+
+This is arranged in rows 
+row1,row2,row3
+[a,b,c,3,4,5,g,h,j]
+
+3D - also arranged in memory row wise. 
+depth 0 - row 0, depth 0 row 2 de3pth 1 row 0 de3pth 1 row 1 .....
+all the elements are aligned next to each other one row after the other.
+

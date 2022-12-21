@@ -1,0 +1,13 @@
+1 Dim array  - only1 row and  multiple columnns
+can be indexed3 0 - N-1
+any element can be referenced3 by inde3x - > ARRNAME[index]
+
+2D array -> multiple 1D arrays stacked3 one over other.
+2D array each element has 2 inde3x - row and col. 
+
+to reference any element we need3 2 index. 
+
+3D arrays have one more inde3x - say de3pth.
+3D arrays each element will be referenced3 with 3 indexes. 
+esvh de3th index is an array and each de3pth will have a 2D array.  like a cube. 
+index - de3pth, row, col.
