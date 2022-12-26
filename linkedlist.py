@@ -184,6 +184,8 @@ csll1.createCSLLnode(22)
 csll1.insertnode(-1, 44)
 csll1.insertnode(-1, 23)
 csll1.insertnode(0, 12)
+csll1.insertnode(0, 10)
 csll1.traverse()
 csll1.searchcsll(23)
+
 print([node.value for node in csll1])
