@@ -60,7 +60,7 @@ class Dlinkedlist:
         self.tail = node
         return "DLL Created"
     
-    def insertnode(self,location,val):
+    def insertafter(self,location,val):
         if self.head == None : 
             self.createnode(val) # creating node in empty list
         else : 
@@ -72,20 +72,106 @@ class Dlinkedlist:
                 newnode.prev = None
 
             elif location == -1 :
-                None
+                newnode.next = None
+                newnode.prev = self.tail
+                self.tail.next = newnode
+                self.tail = newnode
             else : 
-                None
+                tempnode = self.head
+                index = 0
+                while index < location -1 :
+                    tempnode = tempnode.next
+                    index += 1
+                # currentnode = tempnode
+                # we are at the node after which we have to insert new node
+                newnode.prev = tempnode
+                newnode.next = tempnode.next
+                tempnode.next = newnode
+                t = tempnode.next
+                t.prev = newnode
+    def traverseDLL(self):
+        if self.head == None : 
+            print('list empty')
+        else :             
+            node = self.head
+            while node is not None : 
+                print(node.value)
+                node = node.next
+    def reverseTraverse(self):
+        if self.head == None : 
+            print('list empty')
+        else :
+            node = self.tail 
+            while node:
+                print(node.value)
+                node = node.prev
+    def searchitemDLL(self,item):
+        if self.head == None : 
+            return 'list empty'
+        else : 
+            node = self.head
+            while node is not None : 
+                if node.value == item : 
+                    return f"found value {node.value}"
+                else :
+                    node = node.next
+            return 'Not Found'
+    def deletenodeDLL(self,location):
+        if self.head == None : 
+            return 'list is empty'
+        else : 
+            if self.head == self.tail :
+                self.head = None
+                self.tail = None
+            else : 
+                if location == 0:
+                    self.head = self.head.next
+                    self.head.prev = None
+                    
+                elif location == -1 : 
+                    self.tail = self.tail.prev
+                    self.tail.next = None
+                else : 
+                    node = self.head
+                    index = 0
+                    while index < location -1 : 
+                        node = node.next
+                        index+=1 
+                    temp = node.next
+                    node.next = temp.next
+                    node.next.prev = node
+            print('Node deleted')
+    
+    def deleteentireDLL(self):
+        # just by deleting head and tail will not delete list
+        # we have to set entire list references to Null 
+        # if no node poinst to any node X it gets garbage 
+        if self.head == None: 
+            return 'empty list'
+        else : 
+            node = self.head
+            while node:
+                node.prev = None
+                node = node.next
+            self.head = None
+            self.tail = None
+            print('deleted entire list')
                 
-        
-        
-
 Dll1 = Dlinkedlist()
-
-Dll1.insertnode(0,22)
-Dll1.insertnode(0,99)
-Dll1.insertnode(0,33)
-Dll1.insertnode(0,77)
-Dll1.insertnode(0,88)
+Dll1.insertafter(0,22)
+Dll1.insertafter(0,99)
+Dll1.insertafter(0,33)
+Dll1.insertafter(0,77)
+Dll1.insertafter(0,88)
+Dll1.insertafter(-1, 67)
+Dll1.insertafter(-1, 76)
+Dll1.insertafter(3, 55)
 print(Dll1.head.value)
 print(Dll1.tail.value)
+print([node.value for node in Dll1])
+# Dll1.reverseTraverse()
+Dll1.searchitemDLL(99)
+Dll1.deletenodeDLL(6)
+print([node.value for node in Dll1])
+Dll1.deleteentireDLL()
 print([node.value for node in Dll1])
