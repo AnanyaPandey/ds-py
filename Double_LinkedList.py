@@ -62,6 +62,7 @@ class Dlinkedlist:
     
     def insertafter(self,location,val):
         if self.head == None : 
+            print('list empty creating at 0th location')
             self.createnode(val) # creating node in empty list
         else : 
             newnode = Node(val)
