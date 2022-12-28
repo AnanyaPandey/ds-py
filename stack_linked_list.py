@@ -9,6 +9,15 @@ we use a linkedlist instead of a normal list to enhance performance
 # to pop we always pop the first eement onf the list
 # head always points to the top node
 # linear linkedist is good eneough
+
+When to use 
+# to implement LIFO Functionality
+# it cant be easily interrupted
+# data corruption in minimal
+
+when to avoid
+# Random access is not possible or costly
+# accessing data is costly for large list
 """
 
 class Node :
