@@ -59,6 +59,7 @@ class Cqueue :
                     self.end +=1 
             self.items[self.end] = val
             print('element inserted')
+            
     def Cdequeue(self): # Time complexity is O(1)
         if self.isEmpty() :
             return 'list empty'
@@ -88,10 +89,27 @@ class Cqueue :
         self.items = None
         self.start = -1 
         self.end = -1               
-        
-        
+    
+    def deleteQueue(self):
+        self.start = -1
+        self.top = -1
+        self.list = [None] * self.maxSize
+ 
+    def printQueue(self):
+        values = []
+        for i in range(self.start, self.maxsize):
+            x = self.items[i]
+            if x:
+                values.append(self.items[i])
+        for i in range(0, self.start):
+            x = self.items[i]
+            if x:
+                values.append(self.items[i])
+        print(values)
+            
 CQ1 = Cqueue(4)
 print(CQ1)
+
 print(CQ1.isfull())
 print(CQ1.isEmpty())
 CQ1.Cenqueue(21)
@@ -99,7 +117,10 @@ CQ1.Cenqueue(23)
 CQ1.enqueue(51)
 CQ1.Cenqueue(71)
 print(CQ1)
+CQ1.printQueue()
 CQ1.Cdequeue()
 CQ1.Cdequeue()
-print(CQ1)
+CQ1.Cenqueue(11)
+CQ1.enqueue(22)
+CQ1.printQueue()
 
