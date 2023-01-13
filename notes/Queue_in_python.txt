@@ -1,0 +1,19 @@
+
+
+
+Queue can be created in python using these modules.
+====================================================
+Collections Module
+Queue module
+Multiprocessing module
+
+collections.deque - Ecellent performance uses double linkedlist
+Can be used for queue and stack.
+
+Methods: 
+- deque() - create queue of maxlength
+- append() - enqueue
+- popleft() - dequeue
+- clear() - clear deletes all elements in queue
+
+This is not a circular queue but it will keep overriding if we keep appending items after the max length.
