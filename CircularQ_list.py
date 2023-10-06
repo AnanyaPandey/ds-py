@@ -117,6 +117,7 @@ CQ1.Cenqueue(23)
 CQ1.enqueue(51)
 CQ1.Cenqueue(71)
 print(CQ1)
+
 CQ1.printQueue()
 CQ1.Cdequeue()
 CQ1.Cdequeue()
